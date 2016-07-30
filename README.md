@@ -1,5 +1,4 @@
 # San Francisco Lat Long Mapper
-### Mapping (Lat, Long) coordinates to Neighborhood, Zip Code
 
 This repo contains Python code for retrieving a San Francisco neighborhood, and ZIP code, given
 (lat, long) coordinate pairs.
