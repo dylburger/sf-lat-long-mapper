@@ -20,8 +20,8 @@ please be mindful of the number of requests you make against their services.
 ### Socrata API
 
 The Socrata API doesn't _require_ credentials, but without an [App Token](https://dev.socrata.com/docs/app-tokens.html),
-you'll quickly be rate limited. As the page notes, please do not make an unlimited number of requests to the API 
-- rate limit yourself to a reasonable degree, or reach out to their team to discuss your use case.
+you'll quickly be rate limited. As the page notes, please do not make an unlimited number of requests to the API. 
+Rate limit yourself to a reasonable degree, or reach out to their team to discuss your use case.
 
 Once you've [registered your application](https://dev.socrata.com/register) and received an App Token, store the token
 in a file in this repository named _.socrata\_app\_token_ in the following format:
