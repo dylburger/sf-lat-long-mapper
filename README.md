@@ -1,4 +1,5 @@
-# San Francisco ZIPs, Neighborhoods from (lat, long) coordinates
+# San Francisco Lat Long Mapper
+### Mapping (Lat, Long) coordinates to Neighborhood, Zip Code
 
 This repo contains Python code for retrieving a San Francisco neighborhood, and ZIP code, given
 (lat, long) coordinate pairs.
@@ -32,7 +33,7 @@ The _.gitignore_ file in this repo already contains the name of this file, remov
 **Please never commit your App Token to git. There are automated agents scraping Github and related git hosting 
 services for API tokens of many varieties. They can and will steal your credentials.**
 
-### GeoNames username
+### GeoNames API
 
 GeoNames require that you pass only your username in API requests. First, [create a GeoNames account](http://www.geonames.org/login),
 then enable the web service (API) near the bottom of [this page](http://www.geonames.org/manageaccount).
