@@ -38,8 +38,10 @@ class LatLong:
             https://data.sfgov.org/Geographic-Locations-and-Boundaries/SF-Find-Neighborhoods/pty2-tcw4
         """
         # Make a request to the SF Data Socrata API endpoint for neighborhood data
-        formatted_url = SF_DATA_HOST + '/resource/' + NEIGHBORHOOD_BOUNDARIES_RESOURCE_ID + \
-                        ".json?$where=intersects(the_geom,'POINT+(" + str(self.longitude) + '+' + \
+        formatted_url = SF_DATA_HOST + '/resource/' + \
+                        NEIGHBORHOOD_BOUNDARIES_RESOURCE_ID + \
+                        ".json?$where=intersects(the_geom,'POINT+(" + \
+                        str(self.longitude) + '+' + \
                         str(self.latitude) + ")')"
         # Pass the Socrata API token
         headers = {'X-App-Token': self.socrata_api_token}
@@ -58,8 +60,10 @@ class LatLong:
         """
         # Make a request to the GeoNames API for the closest ZIP
         # to the given (lat, long)
-        formatted_url = GEONAMES_HOST + '/' + POSTAL_CODE_MAPPING_ENDPOINT + \
-                        '?lat=' + str(self.latitude) + '&lng=' + str(self.longitude) + \
+        formatted_url = GEONAMES_HOST + '/' + \
+                        POSTAL_CODE_MAPPING_ENDPOINT + \
+                        '?lat=' + str(self.latitude) + \
+                        '&lng=' + str(self.longitude) + \
                         '&username=' + self.geonames_username
         r = requests.get(formatted_url)
         # The first postal code returned from the API is the closest in distance
