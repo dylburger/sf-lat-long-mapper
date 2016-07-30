@@ -44,7 +44,7 @@ After you've created a username and enabled API access, store the username in a 
 
 Again, the _.gitignore_ file contains the name of this file. **Do not commit this file to version control**.
 
-## Using the library
+## Usage
 
 The code to get a neighborhood, or ZIP, given a (lat, long) pair, is very simple. Here's an 
 example from within iPython:
