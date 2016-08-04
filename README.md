@@ -1,7 +1,7 @@
 # San Francisco Lat Long Mapper
 
 This repo contains Python code for retrieving a San Francisco neighborhood, and ZIP code, given
-(lat, long) coordinate pairs.
+(lat, long) coordinate pairs. It has been tested on Python versions 3.5.1 and 2.7.10.
 
 The neighborhood data comes from the City of San Francisco, through the [SF OpenData Socrata API service](https://data.sfgov.org).
 
