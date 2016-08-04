@@ -46,7 +46,8 @@ class LatLong:
         # Pass the Socrata API token
         headers = {'X-App-Token': self.socrata_api_token}
         r = requests.get(formatted_url, headers=headers)
-        neighborhood = json.loads(r.content)[0]['name']
+        unicode_content = helpers.bytes_to_str(r.content)
+        neighborhood = json.loads(unicode_content)[0]['name']
 
         return neighborhood
 
@@ -67,6 +68,7 @@ class LatLong:
                         '&username=' + self.geonames_username
         r = requests.get(formatted_url)
         # The first postal code returned from the API is the closest in distance
-        zip_code = json.loads(r.content)['postalCodes'][0]['postalCode']
+        unicode_content = helpers.bytes_to_str(r.content)
+        zip_code = json.loads(unicode_content)['postalCodes'][0]['postalCode']
 
         return zip_code
