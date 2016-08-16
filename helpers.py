@@ -22,9 +22,9 @@ def read_socrata_app_token(app_token_file=SOCRATA_APP_TOKEN_FILE):
         except yaml.YAMLError as exc:
             print("Your app token file doesn't appear to contain valid "
                   "YAML: ", exc)
-
-        # If everything worked, return the app token
-        return app_token_dict['token']
+        else:
+            # If everything worked, return the app token
+            return app_token_dict['token']
 
 
 def read_geonames_username(geonames_username_file=GEONAMES_USERNAME_FILE):
@@ -48,9 +48,9 @@ def read_geonames_username(geonames_username_file=GEONAMES_USERNAME_FILE):
         except yaml.YAMLError as exc:
             print("Your username file doesn't appear to contain valid "
                   "YAML: ", exc)
-
-        # If everything worked, return the username
-        return geonames_dict['username']
+        else:
+            # If everything worked, return the username
+            return geonames_dict['username']
 
 
 def bytes_to_str(data):
