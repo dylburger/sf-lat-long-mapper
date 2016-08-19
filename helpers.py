@@ -1,5 +1,6 @@
 """ Set of classes and methods to help with random tasks
 """
+from __future__ import print_function
 import yaml
 
 SOCRATA_APP_TOKEN_FILE = ".socrata_app_token"
@@ -14,17 +15,30 @@ def read_socrata_app_token(app_token_file=SOCRATA_APP_TOKEN_FILE):
         More info about Socrata app tokens here:
 
         https://dev.socrata.com/docs/app-tokens.html
+
+        If the API token is malformed, we attempt to notify the
+        user through a specific exception.
+
+        If the API token file doesn't exist at all, we return
+        None, which the client should handle accordingly.
     """
-    with open(app_token_file) as app_token_file_handle:
-        # Load app token from disk, handling basic exceptions
-        try:
-            app_token_dict = yaml.load(app_token_file_handle)
-        except yaml.YAMLError as exc:
-            print("Your app token file doesn't appear to contain valid "
-                  "YAML: ", exc)
-        else:
-            # If everything worked, return the app token
-            return app_token_dict['token']
+    # Load app token from disk, handling basic exceptions
+    try:
+        app_token_file_handle = open(app_token_file, 'r')
+        app_token_dict = yaml.load(app_token_file_handle)
+        token = app_token_dict['token']
+    except yaml.YAMLError as exc:
+        print("Your app token file doesn't appear to contain valid "
+              "YAML: ", exc)
+    except:
+        # If any general exceptions occured, return None, which
+        # the client should handle accordingly
+        return None
+    else:
+        # If everything worked, return the app token
+        return token
+    finally:
+        app_token_file_handle.close()
 
 
 def read_geonames_username(geonames_username_file=GEONAMES_USERNAME_FILE):
