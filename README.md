@@ -52,11 +52,14 @@ example from within iPython:
 
     In [2]: testLatLong = LatLong(latitude=37.7755316484116, longitude=-122.437512719511)
 
-    In [3]: testLatLong.get_neighborhood()
-    Out[3]: u'Alamo Square'
+    In [3]: testLatLong
+    Out[3]: LatLong(37.7755316484116,-122.437512719511)
 
-    In [4]: testLatLong.get_zip_code()
-    Out[4]: u'94117'
+    In [4]: testLatLong.get_neighborhood()
+    Out[4]: u'Alamo Square'
+
+    In [5]: testLatLong.get_zip_code()
+    Out[5]: u'94117'
 
 Try it on your own San Francisco (lat, long) coordinates and let us know if you have any trouble! The code is still very new, 
 and doesn't handle common error conditions, so it's likely bugs are lingering.

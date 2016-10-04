@@ -29,6 +29,9 @@ class LatLong:
         self.socrata_api_token = helpers.read_socrata_app_token()
         self.geonames_username = helpers.read_geonames_username()
 
+    def __repr__(self):
+        return 'LatLong(%r,%r)' % (self.latitude, self.longitude)
+
     def get_neighborhood(self):
         """ Hit the Socrata SF Data API to get a neighborhood
             for a given (lat, long)
